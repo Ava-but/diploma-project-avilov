@@ -221,24 +221,24 @@ h4 {
     position: relative;
     top: 0px;
     height: 50px;
-    color: rgb(242, 7, 7);
-    background: rgba(35, 175, 100, 0.523);
+    color: #ff00ee;
+    background: rgb(2, 176, 188);
 }
 
 .espresso-info {
     position: relative;
     top: 0px;
     height: 50px;
-    color: rgb(242, 7, 7);
-    background: rgba(35, 175, 100, 0.523);
+    color: #ff00ee;
+    background: rgb(2, 176, 188);
 }
 
 .americano-info {
     position: relative;
     top: 0px;
     height: 50px;
-    color: rgb(242, 7, 7);
-    background: rgba(35, 175, 100, 0.523);
+    color: #ff00ee;
+    background: rgb(2, 176, 188);
 }
 
 .coffee .name {
@@ -289,8 +289,8 @@ h4 {
     text-align: center;
     cursor: pointer;
     outline: none;
-    color: #ff0000;
-    background: rgba(0, 0, 0, 0.804);
+    color: #ff00ee;
+    background: rgb(2, 176, 188);
     border: none;
     border-radius: 14px;
     box-shadow: 0 3px #9999996d;
