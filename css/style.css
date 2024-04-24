@@ -247,7 +247,7 @@ h4 {
 
 #button-espresso {
   margin: 11.5rem auto;
-}
+  color: #1a6f09;}
 
 #button-cappuccino {
   margin: 7rem auto;
@@ -463,7 +463,7 @@ footer {
 
   font-weight: bold;
   font-size: 30px;
-  color: #g;
+  color: #1a6f09;
   text-decoration: none;
   font-family: "Raleway"
 }
