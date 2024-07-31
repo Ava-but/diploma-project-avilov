@@ -5,7 +5,7 @@
 $main-color: rgb(188, 185, 2);
 $secondary-color: #1a6f09;
 $font-family: "Kanit", sans-serif;
-$bg-gradient:  linear-gradient(45deg, rgb(103, 71, 5) 32%, rgb(252, 252, 252));
+$bg-gradient:  #6f4e37;
 $transition-time: 0.3s;
 
 // Global Styles
@@ -475,7 +475,7 @@ h4 {
   header, .header2 {
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    text-align: center;}
 
     .shopName {
       font-size: 1.5rem;
