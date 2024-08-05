@@ -2,10 +2,12 @@
 body {
   margin-top: 3rem;
   background-color: rgb(188, 185, 2);
+  
 }
 
 html {
   scroll-behavior: smooth;
+  
 }
 
 header {
@@ -13,13 +15,13 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgb(188, 185, 2);
-  border-bottom: 4px solid #1a6f09;
+  background-color: rgb(219, 219, 207);
+  box-shadow: 0px 40px 7px -5px rgba(0, 0, 0, 0.24);
 }
 
 .shopName {
   font-family: "Kanit", sans-serif;
-  color: #1a6f09;
+  color: #6f4e37;
   text-align: center;
   font-size: 2rem;
   text-shadow: 0px 0px 8px #fffafa;
@@ -72,7 +74,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #010000;
+  color: #6f4e37;
   text-shadow: 0px 0px 8px #dedede;
   text-decoration: none;
   font-weight: bold;
@@ -164,24 +166,24 @@ h4 {
   position: relative;
   top: 0px;
   height: 50px;
-  color: #1a6f09;
-  background: rgb(188, 185, 2);
+  color: #6f4e37;
+  background: rgb(219, 219, 207);
 }
 
 .espresso-info {
   position: relative;
   top: 0px;
   height: 50px;
-  color: #1a6f09;
-  background: rgb(188, 185, 2);
+  color: #6f4e37;
+  background: rgb(219, 219, 207);
 }
 
 .latte-info {
   position: relative;
   top: 0px;
   height: 50px;
-  color: #1a6f09;
-  background: rgb(188, 185, 2);
+  color: #6f4e37;
+  background: rgb(219, 219, 207);
 }
 
 .coffee .name {
@@ -210,7 +212,8 @@ h4 {
 
 .text {
   font-family: "Kanit";
-  color: #1a6f09;
+  color: rgb(219, 219, 207);
+  
   font-size: 50px;
 }
 
@@ -226,10 +229,11 @@ h4 {
   text-align: center;
   cursor: pointer;
   outline: none;
-  color: #1a6f09;
-  background: rgb(188, 185, 2);
+  color: #6f4e37;
+  background: rgb(219, 219, 207);
+  
   border: none;
-  border-radius: 14px;
+  border-radius: 100px;
   box-shadow: 0 3px rgba(153, 153, 153, 0.4274509804);
 }
 
@@ -427,13 +431,13 @@ footer {
 .contact-Web {
   font-weight: bold;
   font-size: 30px;
-  color: #1a6f09;
+  color: rgb(219, 219, 207);
   text-decoration: none;
   font-family: "Raleway";
 }
 
 .contact-info {
-  color: #1a6f09;
+  color: rgb(219, 219, 207);
   font-family: "Kanit";
   font-size: 20px;
 }
@@ -516,6 +520,5 @@ section .text-container .text-box h3 {
 .bg {
   height: 100vh;
   background-size: 300% 300%;
-  background: rgb(26, 111, 9);
-  background-image: linear-gradient(-45deg, rgb(145, 255, 0) 0%, rgb(254, 242, 15) 25%, rgb(217, 164, 19) 51%, #f12b74 100%);
+  background: #6f4e37;
 }
