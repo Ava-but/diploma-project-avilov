@@ -44,9 +44,9 @@
   }
 
  body{
- background-image: url('Нехай сергій включить камеру і візьме кружку для фото');
- }
-   
+  background-image: url('/img/2024-08-07.png');
+  background-repeat: no-repeat;
+  background-size: cover; } 
 .text{
   font-size: 100px;
   text-align: center;
