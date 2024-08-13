@@ -1,0 +1,56 @@
+.payment-form {
+    max-width: 400px;
+    height: 20px;
+    margin: 40px auto;
+    padding: 20px;
+font-size: 30px;
+color: red;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ 
+  }
+
+  .payment-form .card-title {
+    margin-top: 0;
+  }
+
+  .payment-form .form-control {
+    height: 5px;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .payment-form .btn-primary {
+
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  .payment-form .btn-primary:hover {
+    
+  }
+
+  
+  .payment-form .form-group label::after {
+    content: "▶";
+    font-size: 12px;
+
+    margin-left: 10px;
+  }
+
+  .payment-form .form-group input[type="text"]:focus + label::after,
+  .payment-form .form-group input[type="month"]:focus + label::after,
+  .payment-form .form-group input[type="number"]:focus + label::after {
+
+  }
+
+  body{
+    background-image: url('/img/2024-08-07.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+   
+.text{
+  font-size: 100px;
+  text-align: center;
+}
