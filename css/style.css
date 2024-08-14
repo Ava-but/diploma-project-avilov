@@ -105,7 +105,16 @@ header {
   .burger-checkbox:checked~.menu-list {
     transform: translateX(0);
   }
+
+
+
+
 }
+
+
+
+
+
 
 
 .shopName {

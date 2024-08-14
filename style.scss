@@ -181,7 +181,13 @@ h4 {
     .text {
       font-family: $font-family;
       color: $secondary-color;
-      font-size: 50px;
+      font-size: 100px;
+@media (max-width: 468px) {
+  .text{
+  font-size: 50px;}
+  
+}
+
     }
   }
 }
@@ -482,6 +488,12 @@ h4 {
     }
 
     
+    }
+
+
+   
+   
+    
     
 
-  }
+  
