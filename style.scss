@@ -1,118 +1,241 @@
-// Import Kanit font
 @import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-// Variables
-$main-color: rgb(188, 185, 2);
-$secondary-color: #1a6f09;
-$font-family: "Kanit", sans-serif;
-$bg-gradient:  #6f4e37;
-$transition-time: 0.3s;
 
-// Global Styles
+
+ $main-color: rgb(188, 185, 2);
+ $secondary-color: #1a6f09;
+ $font-family: "Kanit", sans-serif;
+ $bg-gradient:  #6f4e37;
+ $transition-time: 0.3s;
+
+
 body {
   margin-top: 3rem;
-  background-color: $main-color;
+ background: #6f4e37;
 }
 
 html {
   scroll-behavior: smooth;
+
 }
 
-// Header Styles
 header {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: $main-color;
-  border-bottom: 4px solid $secondary-color;
-
-  .shopName {
-    font-family: $font-family;
-    color: $secondary-color;
-    text-align: center;
-    font-size: 2rem;
-    text-shadow: 0px 0px 8px #fffafa;
-    margin: 15px 15px 10px 2px;
-  }
+  background-color: rgb(219, 219, 207);
+  box-shadow: 0px 40px 7px -5px rgba(0, 0, 0, 0.24);
 }
 
-// Monkey Image
+
+@media (max-width: 480px) {
+  .burger-checkbox {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  .burger {
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    border: none;
+    background: transparent;
+    width: 40px;
+    height: 26px;
+  
+
+  &::before,
+  &::after {
+    content: '';
+    left: 0;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 10px;
+    background: #000;
+  }
+
+  &::before {
+    top: 0;
+    box-shadow: 0 11px 0 #000;
+    transition: box-shadow .3s .15s, top .3s .15s, transform .3s;
+  }
+
+  &::after {
+    bottom: 0;
+    transition: bottom .3s .15s, transform .3s;
+  }
+
+  &-checkbox:checked+&::before {
+    top: 11px;
+    transform: rotate(45deg);
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0);
+    transition: box-shadow .15s, top .3s, transform .3s .15s;
+  }
+
+  &-checkbox:checked+&::after {
+    bottom: 11px;
+    transform: rotate(-45deg);
+    transition: bottom .3s, transform .3s .15s;
+  }}
+
+  .menu-list {
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: grid;
+    gap: 12px;
+    padding: 42px 0;
+    margin: 0;
+    background: #6f4e37;
+    list-style-type: none;
+    transform: translateX(-100%);
+    transition: .3s;
+    width: 200px;
+  }
+
+  .menu-item {
+    display: block;
+    padding: 8px;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .menu-item:hover {
+    background: rgba(255, 255, 255, .2)
+  }
+
+  .burger-checkbox:checked~.menu-list {
+    transform: translateX(0);
+  }
+
+
+
+
+}
+
+
+
+
+
+
+
+.shopName {
+  font-family: "Kanit", sans-serif;
+  color: #6f4e37;
+  text-align: center;
+  font-size: 2rem;
+  text-shadow: 0px 0px 8px #fffafa;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  margin-left: 2px;
+  margin-right: 15px;
+}
+
 .monkey {
   width: 13%;
   height: auto;
-  padding: 1rem 1.8rem 2rem 0;
+  padding-right: 1.8rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
 }
 
-// Service Logo
-.servises-logo {
-  padding: 5px 0;
-  width: 100%;
-  font-size: clamp(0.9rem, 3vw, 5rem);
-  text-align: center;
-  font-family: $font-family;
-  justify-content: center;
-  align-items: center;
-  margin: 5rem 0;
-}
 
-// Navigation Styles
+
 nav {
   display: flex;
-  padding: 10px;
-  margin: 0 auto 0 0;
-
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    margin-left: auto;
-    margin-top: 19px;
-    justify-content: center;
-
-    li {
-      margin-right: 15px;
-
-      a {
-        color: #010000;
-        text-shadow: 0px 0px 8px #dedede;
-        text-decoration: none;
-        font-weight: bold;
-        font-family: $font-family;
-        transition: all $transition-time ease-in-out;
-
-        &:hover {
-          color: rgb(2, 176, 188);
-          text-shadow: #131313;
-        }
-      }
-    }
-  }
+  padding: 10px 10px;
+  margin-top: 0px;
+  margin-left: auto;
+  margin-right: 10px;
 }
 
-// General Link Styles
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-left: auto;
+  margin-top: 19px;
+  justify-content: center;
+}
+
+nav ul li {
+  margin-right: 15px;
+}
+
+.logo {
+  border-radius: 100px;
+  height: 50px;
+
+}
+
+.image-button {
+  width: 100px;
+  height: 50px;
+  border: none;
+  background-image: url('/img/2024-08-07.png');
+  background-size: cover;
+  border-radius: 100px;
+  position: fixed;
+  right: 0px;
+  z-index: 10;
+  bottom: 20px;
+}
+
+.image-button:hover {
+  opacity: 0.8;
+}
+
+.image-button:active {
+  transform: scale(0.95);
+}
+
+
+
+
+nav ul li a {
+  color: #6f4e37;
+  text-shadow: 0px 0px 8px #dedede;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: "Kanit", sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+  color: rgb(2, 176, 188);
+  text-shadow: #131313;
+}
+
 a {
   text-decoration: none;
 }
 
-// Typography
 h1 {
-  font-family: $font-family;
+  font-family: "Kanit", sans-serif;
   text-align: center;
   font-size: clamp(0.9rem, 3vw, 5rem);
   text-shadow: 0px 0px 8px #fffafa;
-  margin: 12px 12px 10px 0;
+  margin-top: 12px;
+  margin-right: 12px;
+  margin-bottom: 10px;
 }
 
 h4 {
-  font-family: $font-family;
+  font-family: "Kanit", sans-serif;
   text-align: left;
   text-shadow: 0px 0px 8px #fffafa;
-  margin: 0 0 5px;
+  margin-top: 0px;
+  margin-bottom: 5px;
   padding-left: 18px;
 }
 
-// Main Content
 .main-blocks {
   position: relative;
   margin-top: 200px;
@@ -124,192 +247,365 @@ h4 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-
-  .coffee {
-    width: 300px;
-    height: 400px;
-    margin: 1rem;
-    background-color: #fff;
-    box-shadow: 2px 2px 5px #ccc;
-    border-radius: 5px;
-    transition: transform $transition-time ease-in-out;
-    position: relative;
-
-    &:hover {
-      transform: scale(1.1);
-    }
-
-    &.img1, &.img2, &.img3 {
-      background-size: cover;
-      width: auto;
-      margin: -66px 0 0 0px;
-      height: 100%;
-    }
-
-    .capputino-info, .espresso-info, .latte-info {
-      position: relative;
-      top: 0px;
-      height: 50px;
-      color: $secondary-color;
-      background: $main-color;
-    }
-
-    .name {
-      text-align: center;
-      font-family: $font-family;
-      font-size: 2rem;
-      margin-top: 1rem;
-    }
-
-    .price {
-      text-align: center;
-      font-family: $font-family;
-      font-size: 1.5rem;
-      margin-top: 1rem;
-      text-shadow: 1px 1px 2px #ccc;
-    }
-
-    .close {
-      position: absolute;
-      top: 0.5rem;
-      right: 0.5rem;
-      font-size: 1.5rem;
-      color: #ccc;
-      cursor: pointer;
-    }
-
-    .text {
-      font-family: $font-family;
-      color: $secondary-color;
-      font-size: 100px;
-@media (max-width: 468px) {
-  .text{
-  font-size: 50px;}
-  
 }
 
-    }
-  }
+.coffee {
+  width: 300px;
+  height: 400px;
+  margin: 1rem;
+  background-color: #fff;
+  box-shadow: 2px 2px 5px #ccc;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
 }
 
-// Button Styles
+.coffee:hover {
+  transform: scale(1.1);
+}
+
+.img1 {
+  background-image: url("./img/espresso-2AWFEXJ.jpg");
+  background-size: cover;
+  width: auto;
+  margin: -66px 0 0 0px;
+  height: 100%;
+}
+
+.img2 {
+  background-image: url("./img/photo-1600056781444-55f3b64235e3.avif");
+  background-size: cover;
+  width: auto;
+  margin: -66px 0 0 0px;
+  height: 100%;
+}
+
+.img3 {
+  background-image: url("./img/thanh-phan-ly-cafe-americano.webp");
+  background-size: cover;
+  width: auto;
+  margin: -66px 0 0 0px;
+  height: 100%;
+}
+
+.capputino-info {
+  position: relative;
+  top: 0px;
+  height: 50px;
+  color: #6f4e37;
+  background: rgb(219, 219, 207);
+}
+
+.espresso-info {
+  position: relative;
+  top: 0px;
+  height: 50px;
+  color: #6f4e37;
+  background: rgb(219, 219, 207);
+}
+
+.latte-info {
+  position: relative;
+  top: 0px;
+  height: 50px;
+  color: #6f4e37;
+  background: rgb(219, 219, 207);
+}
+
+.coffee .name {
+  text-align: center;
+  font-family: "Kanit", sans-serif;
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+.coffee .price {
+  text-align: center;
+  font-family: "Kanit", sans-serif;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  text-shadow: 1px 1px 2px #ccc;
+}
+
+.close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1.5rem;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.text {
+  font-family: "Kanit";
+  color: rgb(219, 219, 207);
+
+  font-size: 50px;
+}
+
 .button {
   display: block;
+  bottom: 0%;
   border: none;
-  border-radius: 14px;
+  border-radius: 6px;
   cursor: pointer;
   padding: 10px 10px;
   font-size: 18px;
-  font-family: $font-family;
+  font-family: "Kanit", sans-serif;
   text-align: center;
+  cursor: pointer;
   outline: none;
-  color: $secondary-color;
-  background: $main-color;
+  color: #6f4e37;
+  background: rgb(219, 219, 207);
+
+  border: none;
+  border-radius: 100px;
   box-shadow: 0 3px rgba(153, 153, 153, 0.4274509804);
-
-  &.button-espresso {
-    margin: 11.5rem auto;
-  }
-
-  &.button-cappuccino {
-    margin: 7rem auto;
-  }
-
-  &:hover {
-    background: rgb(0, 0, 0);
-  }
-
-  &:active {
-    background-color: rgba(214, 167, 9, 0.7568627451);
-    box-shadow: 0 3px rgba(95, 95, 96, 0.7137254902);
-    transform: translateY(2px);
-  }
 }
 
-// Services and Gallery
-.servises-list {
-  display: flex;
-  width: 1170px;
-  margin: -66px auto 0;
-  justify-content: space-between;
-  padding: 94px 0;
-
-  .servises-item {
-    box-shadow: -2px 10px 7px -5px rgba(0, 0, 0, 0.24);
-    width: 270px;
-    background-color: var(--main-color);
-    height: 368px;
-
-    img {
-      width: 270px;
-      height: 260px;
-    }
-
-    .servises-name {
-      color: var(--body-color);
-      font-family: $font-family;
-      font-size: 16px;
-      font-weight: 500;
-      letter-spacing: 0.48px;
-    }
-  }
+#button-espresso {
+  margin: 11.5rem auto;
+  color: #1a6f09;
 }
+
+#button-cappuccino {
+  margin: 7rem auto;
+}
+
+.button:hover {
+  background: rgb(0, 0, 0);
+}
+
+.button:active {
+  background-color: rgba(214, 167, 9, 0.7568627451);
+  box-shadow: 0 3px rgba(95, 95, 96, 0.7137254902);
+  transform: translateY(2px);
+}
+
+.img1 {
+  background-image: url("../img/espresso-2AWFEXJ.jpg");
+  background-size: cover;
+  width: auto;
+  margin: -66px 0 0 0px;
+  height: 100%;
+}
+
+.img2 {
+  background-image: url("../img/photo-1600056781444-55f3b64235e3.avif");
+  background-size: cover;
+  width: auto;
+  margin: -66px 0 0 0px;
+  height: 100%;
+}
+
+.img3 {
+  background-image: url("../img/thanh-phan-ly-cafe-americano.webp");
+  background-size: cover;
+  width: auto;
+  margin: -66px 0 0 0px;
+  height: 100%;
+}
+
+
 
 .gallery {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 0 10px;
-
-  .card {
-    width: calc(33.33% - 15px);
-    margin-bottom: 20px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    transition: all $transition-time ease-in-out;
-    background-color: white;
-
-    &:hover {
-      transform: translateY(-10px);
-      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    img {
-      margin-top: 15px;
-      width: 80%;
-      height: auto;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      margin-left: 2.5vw;
-    }
-
-    .card-content {
-      background-color: white;
-      padding: 10px;
-
-      h3 {
-        font-size: clamp(0.5rem, 2vw, 10rem);
-        margin-bottom: 10px;
-      }
-
-      p {
-        height: 100%;
-        font-size: clamp(0.5rem, 1.5vw, 10rem);
-      }
-    }
+  margin-right: 10px;
+  margin-left: 10px;
+  @media (max-width: 760px) {
+    align-items: center;
+    
+    display: flex;
+    flex-direction: column; 
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
-// Footer and Sections
+.card {
+  width: calc(33.33% - 15px);
+  margin-bottom: 20px;
+  padding-right: 0px;
+  padding-left: 0px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+  margin-top: 15px;
+  width: 80%;
+  height: 2wh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: 2.5vw;
+}
+
+.card-content {
+  background-color: white;
+  padding: 10px;
+}
+
+.card-content h3 {
+  font-size: clamp(0.5rem, 2vw, 10rem);
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  height: 100%;
+  font-size: clamp(0.5rem, 1.5vw, 10rem);
+}
+
+section {
+  position: relative;
+}
+
+section h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  margin-bottom: 10px;
+  padding-left: 0px;
+}
+
+.social-icon {
+  padding-top: 5px;
+  padding-bottom: 0px;
+  margin-top: 5rem;
+  margin-bottom: 10px;
+  margin: 0px 10px;
+}
+
 .footer {
   display: block;
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+  margin: 0px;
+}
+
+section h3 {
+  margin: 1px;
+  padding: 0 auto;
+}
+
+p {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.servises {
+  padding-bottom: 94px;
+  padding-top: 94px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+&-list {
+  display: flex;
+  width: 1170px;
+  margin: 0 auto;
+  margin: -66px 0 0 0px;
+  justify-content: space-between;
+  padding-bottom: 94px;
+  padding-top: 94px;
+  @media (max-width: 760px) {
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+    flex-wrap: wrap;
+    justify-content: center;
+    
+  }
+}
+
+&-item img {
+  width: 270px;
+  height: 260px;
+}
+
+&-name {
+  color: var(--body-color);
+  font-family: "Kanit", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.48px;
+}
+
+&-item {
+  box-shadow: -2px 10px 7px -5px rgba(0, 0, 0, 0.24);
+}
+
+&-list li {
+  width: 270px;
+  background-color: var(--main-color);
+  height: 368px;
+}
+
+&-logo {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 100%;
+  font-size: clamp(0.9rem, 3vw, 5rem);
+  text-align: center;
+  font-family: "kanit", sans-serif;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+
+
+}
+
+.header-footer {
+  background: #e1e1e1;
+}
+
+.servises .servises-photo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer {
   padding: 10px;
   text-align: left;
   font-family: "Roboto";
+}
 
-  p {
-    margin: 10px 0;
+.contact-Web {
+  font-weight: bold;
+  font-size: 30px;
+  color: rgb(219, 219, 207);
+  text-decoration: none;
+  font-family: "Raleway";
+}
+
+.contact-info {
+  color: rgb(219, 219, 207);
+  font-family: "Kanit";
+  font-size: 20px;
+}
+
+.contact-logo{
+  @media (max-width:760px) {
+    align-items: start;
+    display: flex;
   }
 }
 
@@ -319,181 +615,131 @@ h4 {
   height: 252px;
   flex-direction: column;
   margin: 0 auto;
-
-  &-Web {
-    font-weight: bold;
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-
-  &-Address {
-    color: rgb(101, 109, 118);
-    line-height: 1.8;
-    font-size: 14px;
-    margin-bottom: 5px;
-  }
-
-  &-name {
-    color: rgb(51, 51, 51);
-    font-weight: 500;
-    font-size: 16px;
-    margin-bottom: 5px;
-    margin-top: 5px;
-  }
-
-  &-email {
-    color: rgb(101, 109, 118);
-    line-height: 1.8;
-    font-size: 14px;
-    margin-bottom: 5px;
-  }
-
-  &-contact {
-    margin-left: auto;
-  }
-
-  &-details {
-    margin-right: 70px;
-    margin-top: 70px;
-    margin-bottom: 0;
-    padding-top: 10px;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &-location {
-    margin-bottom: 10px;
-  }
 }
 
-.header2 {
+footer p {
+  margin: 10px 0;
+}
+
+section {
   display: flex;
-  justify-content: space-between;
-  width: 1170px;
-  margin: 0 auto;
-  padding: 50px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  font-family: "Roboto";
-
-  img {
-    width: 150px;
-    height: auto;
-    margin-top: 13px;
-  }
+  justify-content: top;
+  align-items: top;
 }
 
-.section {
-  width: 1170px;
-  height: 525px;
-  margin: 0 auto;
+section:nth-child(2) {
+  color: #42455a;
+  background: #e0ffff;
+}
+
+section:nth-child(3) {
+  color: #e0ffff;
+}
+
+section:nth-child(4) {
+  color: #42455a;
+  background: #e0ffff;
+}
+
+section h1 {
+  font-size: 3rem;
+  margin: 20px;
+}
+
+section h2 {
+  font-size: clamp(0.9rem, 3vw, 5rem);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+section .text-container {
+  width: 100%;
+  padding-left: 10%;
+  margin-right: 10%;
   display: flex;
+  margin-top: 1px;
   justify-content: space-between;
-  padding: 50px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-
-  &-title {
-    font-weight: bold;
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
-
-  &-content {
-    width: 72%;
-  }
-
-  &-sidebar {
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-
-  &-item {
-    margin-bottom: 20px;
-  }
-
-  &-link {
-    text-decoration: none;
-    color: #333;
-    font-size: 14px;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
 }
 
-// Background Gradient
-.bg {
-  background: $bg-gradient;
-  position: absolute;
-  width: 99%;
-  height: 250px;
+section .text-container .text-box {
+  width: 270px;
+  margin: 5px;
+  padding: 20px;
+  background: rgba(251, 251, 251, 0.8941176471);
 }
 
-// Reveal Animation
+section .text-container .text-box h3 {
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
 .reveal {
   position: relative;
-  overflow: hidden;
-  background-color: transparent;
-
-  &.reveal-left {
-    animation: reveal-left 1s ease-in-out;
-  }
-
-  &.reveal-right {
-    animation: reveal-right 1s ease-in-out;
-  }
-
-  &.reveal-bottom {
-    animation: reveal-bottom 1s ease-in-out;
-  }
+  font-family: "Kanit", sans-serif;
+  font-size: 19px;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
 }
 
-@keyframes reveal-left {
-  from {
-    left: -100%;
-  }
-  to {
-    left: 0%;
-  }
+.bg {
+  height: 100vh;
+  background-size: 300% 300%;
+  background-image: url('https://www.worldcoffeeportal.com/getattachment/d5befc3f-e5b1-4174-8045-4d82042d51a2/Coffee-plantations-_-Credit-Vitor-Barao-(1).jpg.aspx?lang=en-GB&width=700&height=393');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-@keyframes reveal-right {
-  from {
-    right: -100%;
-  }
-  to {
-    right: 0%;
-  }
+.reveal {
+  position: relative;
+  font-family: "Kanit", sans-serif;
+  font-size: 19px;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
 }
 
-@keyframes reveal-bottom {
-  from {
-    bottom: -100%;
-  }
-  to {
-    bottom: 0%;
-  }
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
 }
 
-@media (max-width: 768px) {
-  header, .header2 {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;}
+.reveal:nth-child(1) {
+  animation: fadeIn 1s forwards;
+  animation-delay: 1s;
+}
 
-    .shopName {
-      font-size: 1.5rem;
-    }
+main {
+  animation-name: kol;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
 
-    
-    }
+/* @keyframes kol {
+  0% {
+    opacity: 0;
+  }
+
+25%{
+  color: purple;
+}
+
+50%{
+color: aqua;
+}
+
+75%{
+ background-image: url('https://www.worldcoffeeportal.com/getattachment/d5befc3f-e5b1-4174-8045-4d82042d51a2/Coffee-plantations-_-Credit-Vitor-Barao-(1).jpg.aspx?lang=en-GB&width=700&height=393');
+background-repeat: no-repeat;
+background-size: cover;
+}
 
 
-   
-   
-    
-    
+  100% {
+   color: #1a6f09;
+  }
+} */
 
-  
+
