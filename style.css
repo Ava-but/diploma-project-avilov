@@ -166,11 +166,9 @@ nav ul li {
     bottom: 10px;
   }
 }
-
 .image-button:hover {
-  opacity: 0.8;
+  opacity: 0.6;
 }
-
 .image-button:active {
   transform: scale(0.95);
 }
@@ -575,6 +573,12 @@ footer {
   font-family: "Matemasie";
 }
 
+.contact {
+  display: flex;
+  height: 252px;
+  flex-direction: column;
+  margin: 0 auto;
+}
 .contact-Web {
   font-weight: bold;
   font-size: 30px;
@@ -582,25 +586,22 @@ footer {
   text-decoration: none;
   font-family: "Matemasie";
 }
-
 .contact-info {
   color: rgb(219, 219, 207);
   font-family: "Matemasie";
   font-size: 20px;
 }
-
+.contact-logo {
+  color: lightcoral;
+}
+.contact-logo:hover {
+  opacity: 0.5;
+}
 @media (max-width: 760px) {
   .contact-logo {
     align-items: start;
     display: flex;
   }
-}
-
-.contact {
-  display: flex;
-  height: 252px;
-  flex-direction: column;
-  margin: 0 auto;
 }
 
 footer p {

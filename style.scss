@@ -202,15 +202,17 @@ nav ul li {
   z-index: 10;
   bottom: 10px;
   }
+
+  &:hover {
+    opacity: 0.6;
+  }
+  
+  &:active {
+    transform: scale(0.95);
+  }
 }
 
-.image-button:hover {
-  opacity: 0.8;
-}
 
-.image-button:active {
-  transform: scale(0.95);
-}
 
 
 
@@ -608,7 +610,7 @@ p {
   }
   100% {
     transform: translateY(0); 
-    
+
   }
 }
 
@@ -633,32 +635,42 @@ footer {
   font-family: "Matemasie";
 }
 
-.contact-Web {
-  font-weight: bold;
-  font-size: 30px;
-  color: rgb(219, 219, 207);
-  text-decoration: none;
-  font-family: "Matemasie";
-}
 
-.contact-info {
-  color: rgb(219, 219, 207);
-  font-family: "Matemasie";
-  font-size: 20px;
-}
-
-.contact-logo{
-  @media (max-width:760px) {
-    align-items: start;
-    display: flex;
-  }
-}
 
 .contact {
   display: flex;
   height: 252px;
   flex-direction: column;
   margin: 0 auto;
+
+
+  &-Web {
+    font-weight: bold;
+    font-size: 30px;
+    color: rgb(219, 219, 207);
+    text-decoration: none;
+    font-family: "Matemasie";
+  }
+  
+  &-info {
+    color: rgb(219, 219, 207);
+    font-family: "Matemasie";
+    font-size: 20px;
+  }
+  
+  &-logo{
+    &:hover{
+      opacity: 0.5;
+    }
+    color: lightcoral;
+    @media (max-width:760px) {
+      align-items: start;
+      display: flex;
+    }
+  }
+
+
+  
 }
 
 footer p {
