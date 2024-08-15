@@ -582,11 +582,40 @@ p {
   align-items: center;
   margin-top: 5rem;
   margin-bottom: 5rem;
+  animation: jump 4s ease infinite;
+}
+}
+
+
+.animation{
+  animation: jump 4s ease infinite;
+
+}
+
+#us{
+  font-size: 50px;
+  animation: jump 4s ease infinite;
+
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0); 
+  }
+  50% {
+    transform: translateY(-50px);
+    color: lightcoral; 
+  }
+  100% {
+    transform: translateY(0); 
+    
+  }
 }
 
 
 
-}
+
+
 
 .header-footer {
   background: #e1e1e1;
