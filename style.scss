@@ -656,6 +656,9 @@ footer {
     color: rgb(219, 219, 207);
     font-family: "Matemasie";
     font-size: 20px;
+    &:hover{
+      opacity: 0.6;
+    }
   }
   
   &-logo{

@@ -591,6 +591,9 @@ footer {
   font-family: "Matemasie";
   font-size: 20px;
 }
+.contact-info:hover {
+  opacity: 0.6;
+}
 .contact-logo {
   color: lightcoral;
 }
